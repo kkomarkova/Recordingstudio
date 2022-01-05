@@ -1,0 +1,38 @@
+﻿@page "/trial"
+@using HQrecordingstudioBlazor.Shared.Models
+@using HQrecordingstudioBlazor.Shared.Repository
+@using HQrecordingstudioBlazor.Client.ViewModel
+@inject CatalogueViewModel viewModel
+@inject ICatalogueRepository CatalogueRepository
+@inject HttpClient Http
+
+
+
+<h1>Catalogue</h1>
+
+@if (catalogueItems == null)
+{
+    <div>There is no student added</div>
+}
+else
+{
+    foreach (CatalogueItem c in catalogueItems)
+    {
+        <div style="padding:15px;border-bottom:solid 1px #0094ff;">
+            @c.Title @c.Description | @c.ArtistId
+        </div>
+    }
+}
+
+@code {
+    private List<CatalogueItem> catalogueItems;
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    catalogueItems = await CatalogueRepository.GetCatalogue();
+    //}
+
+    protected override async Task OnInitializedAsync()
+    {
+        catalogueItems = await Http.GetFromJsonAsync<List<CatalogueItem>>("api/catalogue");
+    }
+}

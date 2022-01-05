@@ -1,0 +1,219 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\css\bootstrap\**" />
+    <Content Remove="wwwroot\css\bootstrap\**" />
+    <EmbeddedResource Remove="wwwroot\css\bootstrap\**" />
+    <None Remove="wwwroot\css\bootstrap\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\fonts\JosefinSans-Bold.eot" />
+    <None Include="wwwroot\fonts\JosefinSans-Bold.woff" />
+    <None Include="wwwroot\fonts\JosefinSans-Bold.woff2" />
+    <None Include="wwwroot\fonts\JosefinSans-Light.eot" />
+    <None Include="wwwroot\fonts\JosefinSans-Light.woff" />
+    <None Include="wwwroot\fonts\JosefinSans-Light.woff2" />
+    <None Include="wwwroot\fonts\JosefinSans-Regular.eot" />
+    <None Include="wwwroot\fonts\JosefinSans-Regular.woff" />
+    <None Include="wwwroot\fonts\JosefinSans-Regular.woff2" />
+    <None Include="wwwroot\fonts\JosefinSans-SemiBold.eot" />
+    <None Include="wwwroot\fonts\JosefinSans-SemiBold.woff" />
+    <None Include="wwwroot\fonts\JosefinSans-SemiBold.woff2" />
+    <None Include="wwwroot\fonts\JosefinSans-Thin.eot" />
+    <None Include="wwwroot\fonts\JosefinSans-Thin.woff" />
+    <None Include="wwwroot\fonts\JosefinSans-Thin.woff2" />
+    <None Include="wwwroot\images\adv.jpg" />
+    <None Include="wwwroot\images\adv1.jpg" />
+    <None Include="wwwroot\images\album\album1.jpg" />
+    <None Include="wwwroot\images\album\album10.jpg" />
+    <None Include="wwwroot\images\album\album2.jpg" />
+    <None Include="wwwroot\images\album\album3.jpg" />
+    <None Include="wwwroot\images\album\album4.jpg" />
+    <None Include="wwwroot\images\album\album5.jpg" />
+    <None Include="wwwroot\images\album\album6.jpg" />
+    <None Include="wwwroot\images\album\album7.jpg" />
+    <None Include="wwwroot\images\album\album8.jpg" />
+    <None Include="wwwroot\images\album\album9.jpg" />
+    <None Include="wwwroot\images\album\single_album.jpg" />
+    <None Include="wwwroot\images\app_store.jpg" />
+    <None Include="wwwroot\images\artist\artist1.jpg" />
+    <None Include="wwwroot\images\artist\artist10.jpg" />
+    <None Include="wwwroot\images\artist\artist11.jpg" />
+    <None Include="wwwroot\images\artist\artist12.jpg" />
+    <None Include="wwwroot\images\artist\artist13.jpg" />
+    <None Include="wwwroot\images\artist\artist2.jpg" />
+    <None Include="wwwroot\images\artist\artist3.jpg" />
+    <None Include="wwwroot\images\artist\artist4.jpg" />
+    <None Include="wwwroot\images\artist\artist5.jpg" />
+    <None Include="wwwroot\images\artist\artist6.jpg" />
+    <None Include="wwwroot\images\artist\artist7.jpg" />
+    <None Include="wwwroot\images\artist\artist8.jpg" />
+    <None Include="wwwroot\images\artist\artist9.jpg" />
+    <None Include="wwwroot\images\artist\artist_single.jpg" />
+    <None Include="wwwroot\images\author.png" />
+    <None Include="wwwroot\images\banner.png" />
+    <None Include="wwwroot\images\blog\author.jpg" />
+    <None Include="wwwroot\images\blog\blog1.jpg" />
+    <None Include="wwwroot\images\blog\blog10.jpg" />
+    <None Include="wwwroot\images\blog\blog11.jpg" />
+    <None Include="wwwroot\images\blog\blog12.jpg" />
+    <None Include="wwwroot\images\blog\blog13.jpg" />
+    <None Include="wwwroot\images\blog\blog2.jpg" />
+    <None Include="wwwroot\images\blog\blog3.jpg" />
+    <None Include="wwwroot\images\blog\blog4.jpg" />
+    <None Include="wwwroot\images\blog\blog5.jpg" />
+    <None Include="wwwroot\images\blog\blog6.jpg" />
+    <None Include="wwwroot\images\blog\blog7.jpg" />
+    <None Include="wwwroot\images\blog\blog8.jpg" />
+    <None Include="wwwroot\images\blog\blog9.jpg" />
+    <None Include="wwwroot\images\blog\blog_single.jpg" />
+    <None Include="wwwroot\images\blog\fp_img1.jpg" />
+    <None Include="wwwroot\images\blog\fp_img2.jpg" />
+    <None Include="wwwroot\images\favicon.png" />
+    <None Include="wwwroot\images\featured\song1.jpg" />
+    <None Include="wwwroot\images\featured\song2.jpg" />
+    <None Include="wwwroot\images\featured\song3.jpg" />
+    <None Include="wwwroot\images\featured\song4.jpg" />
+    <None Include="wwwroot\images\featured\song5.jpg" />
+    <None Include="wwwroot\images\featured\song6.jpg" />
+    <None Include="wwwroot\images\footer_bg.png" />
+    <None Include="wwwroot\images\genrs\img1.jpg" />
+    <None Include="wwwroot\images\genrs\img10.jpg" />
+    <None Include="wwwroot\images\genrs\img11.jpg" />
+    <None Include="wwwroot\images\genrs\img12.jpg" />
+    <None Include="wwwroot\images\genrs\img13.jpg" />
+    <None Include="wwwroot\images\genrs\img14.jpg" />
+    <None Include="wwwroot\images\genrs\img15.jpg" />
+    <None Include="wwwroot\images\genrs\img16.jpg" />
+    <None Include="wwwroot\images\genrs\img17.jpg" />
+    <None Include="wwwroot\images\genrs\img18.jpg" />
+    <None Include="wwwroot\images\genrs\img2.jpg" />
+    <None Include="wwwroot\images\genrs\img3.jpg" />
+    <None Include="wwwroot\images\genrs\img4.jpg" />
+    <None Include="wwwroot\images\genrs\img5.jpg" />
+    <None Include="wwwroot\images\genrs\img6.jpg" />
+    <None Include="wwwroot\images\genrs\img7.jpg" />
+    <None Include="wwwroot\images\genrs\img8.jpg" />
+    <None Include="wwwroot\images\genrs\img9.jpg" />
+    <None Include="wwwroot\images\google_play.jpg" />
+    <None Include="wwwroot\images\loader.gif" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\images\music\r_music1.jpg" />
+    <None Include="wwwroot\images\music\r_music2.jpg" />
+    <None Include="wwwroot\images\music\r_music3.jpg" />
+    <None Include="wwwroot\images\music\r_music4.jpg" />
+    <None Include="wwwroot\images\music\r_music5.jpg" />
+    <None Include="wwwroot\images\music\r_music6.jpg" />
+    <None Include="wwwroot\images\open_logo.png" />
+    <None Include="wwwroot\images\plan_icon1.png" />
+    <None Include="wwwroot\images\plan_icon2.png" />
+    <None Include="wwwroot\images\plan_icon3.png" />
+    <None Include="wwwroot\images\player_bg.jpg" />
+    <None Include="wwwroot\images\play_song1.jpg" />
+    <None Include="wwwroot\images\profile_img.png" />
+    <None Include="wwwroot\images\pro_img.jpg" />
+    <None Include="wwwroot\images\pro_img.png" />
+    <None Include="wwwroot\images\radio\img1.jpg" />
+    <None Include="wwwroot\images\radio\img10.jpg" />
+    <None Include="wwwroot\images\radio\img11.jpg" />
+    <None Include="wwwroot\images\radio\img12.jpg" />
+    <None Include="wwwroot\images\radio\img13.jpg" />
+    <None Include="wwwroot\images\radio\img2.jpg" />
+    <None Include="wwwroot\images\radio\img3.jpg" />
+    <None Include="wwwroot\images\radio\img4.jpg" />
+    <None Include="wwwroot\images\radio\img5.jpg" />
+    <None Include="wwwroot\images\radio\img6.jpg" />
+    <None Include="wwwroot\images\radio\img7.jpg" />
+    <None Include="wwwroot\images\radio\img8.jpg" />
+    <None Include="wwwroot\images\radio\img9.jpg" />
+    <None Include="wwwroot\images\register_img.png" />
+    <None Include="wwwroot\images\station\station1.jpg" />
+    <None Include="wwwroot\images\svg\add.svg" />
+    <None Include="wwwroot\images\svg\add_q.svg" />
+    <None Include="wwwroot\images\svg\border.svg" />
+    <None Include="wwwroot\images\svg\close.svg" />
+    <None Include="wwwroot\images\svg\icon - Copy.svg" />
+    <None Include="wwwroot\images\svg\icon.svg" />
+    <None Include="wwwroot\images\svg\lang.svg" />
+    <None Include="wwwroot\images\svg\left_arrow.svg" />
+    <None Include="wwwroot\images\svg\message.svg" />
+    <None Include="wwwroot\images\svg\more.svg" />
+    <None Include="wwwroot\images\svg\pause.svg" />
+    <None Include="wwwroot\images\svg\pause_all.svg" />
+    <None Include="wwwroot\images\svg\phone.svg" />
+    <None Include="wwwroot\images\svg\plan.svg" />
+    <None Include="wwwroot\images\svg\play.svg" />
+    <None Include="wwwroot\images\svg\play1.svg" />
+    <None Include="wwwroot\images\svg\play_all.svg" />
+    <None Include="wwwroot\images\svg\play_icon.svg" />
+    <None Include="wwwroot\images\svg\play_next.svg" />
+    <None Include="wwwroot\images\svg\play_pre.svg" />
+    <None Include="wwwroot\images\svg\quote.svg" />
+    <None Include="wwwroot\images\svg\repeat.svg" />
+    <None Include="wwwroot\images\svg\right_arrow.svg" />
+    <None Include="wwwroot\images\svg\search.svg" />
+    <None Include="wwwroot\images\svg\share.svg" />
+    <None Include="wwwroot\images\svg\shuffle.svg" />
+    <None Include="wwwroot\images\svg\sound.svg" />
+    <None Include="wwwroot\images\svg\upload.svg" />
+    <None Include="wwwroot\images\svg\volume.svg" />
+    <None Include="wwwroot\images\user1.jpg" />
+    <None Include="wwwroot\images\user2.jpg" />
+    <None Include="wwwroot\images\user3.jpg" />
+    <None Include="wwwroot\images\user4.jpg" />
+    <None Include="wwwroot\images\weekly\song1.jpg" />
+    <None Include="wwwroot\images\weekly\song10.jpg" />
+    <None Include="wwwroot\images\weekly\song11.jpg" />
+    <None Include="wwwroot\images\weekly\song12.jpg" />
+    <None Include="wwwroot\images\weekly\song13.jpg" />
+    <None Include="wwwroot\images\weekly\song14.jpg" />
+    <None Include="wwwroot\images\weekly\song2.jpg" />
+    <None Include="wwwroot\images\weekly\song3.jpg" />
+    <None Include="wwwroot\images\weekly\song4.jpg" />
+    <None Include="wwwroot\images\weekly\song5.jpg" />
+    <None Include="wwwroot\images\weekly\song6.jpg" />
+    <None Include="wwwroot\images\weekly\song7.jpg" />
+    <None Include="wwwroot\images\weekly\song8.jpg" />
+    <None Include="wwwroot\images\weekly\song9.jpg" />
+    <None Include="wwwroot\images\windows.jpg" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\jquery.js" />
+    <None Include="wwwroot\js\plugins\nice_select\jquery.nice-select.min.js" />
+    <None Include="wwwroot\js\plugins\player\audio-player.js" />
+    <None Include="wwwroot\js\plugins\player\jplayer.playlist.min.js" />
+    <None Include="wwwroot\js\plugins\player\jquery.jplayer.min.js" />
+    <None Include="wwwroot\js\plugins\player\volume.js" />
+    <None Include="wwwroot\js\plugins\scroll\jquery.mCustomScrollbar.js" />
+    <None Include="wwwroot\js\plugins\swiper\js\swiper.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazorise" Version="0.9.5.3" />
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.5.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.12" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="5.0.12" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="19.3.0.56" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.3.0.56" />
+    <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\HQrecordingstudioBlazor.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

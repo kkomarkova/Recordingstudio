@@ -1,0 +1,89 @@
+﻿@page "/SingleTrack"
+@using HQrecordingstudioBlazor.Shared.Models;
+@using Newtonsoft.Json
+@using Client.ViewModel
+@inject CatalogueViewModel vm
+@inject NavigationManager NavigationManager
+@*<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="margin-top:100px">
+                <div class="row">
+                    <div class="col-md-6">
+                       <div class="ms_rcnt_box"
+                        <div class="ms_rcnt_box_img">
+                            <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                        </div>
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ms_heading">
+                            <h1>Title of the track</h1>
+                        </div>
+                        <div class="ms_rcnt_box_text">
+
+                        </div>
+                        <div>
+                            <span class="top_marquee">
+                                Song descriptions are key to connecting with listeners and getting featured in blogs and the press.
+                                A song description by the artist is not meant to be a review of the song, nor a rehash of the lyrics, nor what the listener can hear for herself.
+                            </span>
+                        </div>
+
+                        <div class="btn-group" style="margin-top:100px" role="group" aria-label="Basic example">
+                            <a href="#" class="ms_btn_normal"> Add to card</a>
+                            <a href="#" class="ms_btn">Buy now</a>
+
+                        </div>
+        </div>
+            </div>
+        </div>
+    </div>*@
+@{ if (vm.SelectedItem != null)
+    {
+        <div class="ms_album_single_wrapper ms_artist_single">
+            <div class="album_single_data">
+                <div class="album_single_img">
+                    <img src="@vm.SelectedItem.Image" alt="" class="img-fluid">
+                </div>
+                <div class="album_single_text">
+                    <h2>@vm.SelectedItem.Title</h2>
+                    <p class="singer_name">@vm.SelectedItem.ArtistId</p>
+                    <div class="about_artist">
+                        @vm.SelectedItem.Description
+                    </div>
+                    <div class="album_btn">
+                        <a href="#" class="ms_btn"><img src="images/svg/plus-white.svg" alt=""> Add to the Card</a>
+                        <a href="#" class="ms_btn" style="margin-left:15px"><img src="images/svg/shopping-cart.svg" alt="">Buy now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      
+    }
+            else
+            {
+                <p>Hi</p>
+            }
+}
+
+
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            vm.StateHasChangedDelegate = UpdateUI;
+            var test = vm;
+            StateHasChanged();
+        }
+    }
+
+    public void UpdateUI()
+    {
+        StateHasChanged();
+    }
+
+
+}

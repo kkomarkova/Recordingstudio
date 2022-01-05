@@ -1,0 +1,70 @@
+﻿@*<div class="top-row pl-4 navbar navbar-dark">
+        <a class="navbar-brand" href="">HQrecordingstudioBlazor</a>
+        <button class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+        <ul class="nav flex-column">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="oi oi-home" aria-hidden="true"></span> Home
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="counter">
+                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                </NavLink>
+            </li>
+            <AuthorizeView Roles="Administrator">
+                <Authorized>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="fetchdata">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+                        </NavLink>
+                    </li>
+                </Authorized>
+            </AuthorizeView>
+        </ul>
+    </div>*@
+<!---Header--->
+<div class="ms_header">
+    <div class="ms_top_left">
+        <div class="ms_top_search">
+            <input type="text" class="form-control" placeholder="Search Music Here..">
+            <span class="search_icon">
+                <img src="images/svg/search.svg" alt="">
+            </span>
+        </div>
+        <div class="ms_top_trend">
+            <span><a href="#" class="ms_color">Trending Songs :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
+        </div>
+    </div>
+    <div class="ms_top_right">
+        <div class="ms_top_lang">
+            <span><a href="/purchase"><img src="images/svg/shopping-cart.svg"></a></span>
+            <span><a href="/favourite"><img src="images/svg/heart.svg"></a></span>
+        </div>
+        <div class="ms_top_btn">
+            @*<a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
+        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>*@
+            @*<a class="ms_btn reg_btn">
+                <NavLink class="nav-link" href="counter">
+                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                </NavLink>
+            </a>*@
+            <LoginDisplay/>
+        </div>
+    </div>
+</div>
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
