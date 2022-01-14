@@ -21,7 +21,7 @@ namespace HQrecordingstudioBlazor.Shared.Repository
 
         public async Task<List<CatalogueItem>> GetCatalogue()
         {
-            var query = "SELECT * FROM Catalogue";
+            var query = "select * from Catalogue WHERE ParentId IS NOT NULL";
             using (var connection = _context.CreateConnection())
             {
                 return (await connection.QueryAsync<CatalogueItem>(query)).ToList();

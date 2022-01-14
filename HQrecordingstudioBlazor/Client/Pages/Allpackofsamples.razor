@@ -9,49 +9,37 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="ms_heading">
-                    <h1>Sample of packs</h1>
+                    <h1>Sample packs</h1>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-6">
 
-                @if (vm.CatalogueSamplePack == null)
-                {
-    <div>There is no Sample pack added</div> }
+            @if (vm.CatalogueSamplePack == null)
+            {
+<div>There is no Sample pack added</div> }
 else
 {
-    foreach (var c in vm.CatalogueSamplePack)
-    {
-<div class="ms_rcnt_box marger_bottom30">
-    <div class="ms_rcnt_box_img">
-        <img src="@c.Image" alt="" class="img-fluid">
-        <div class="ms_main_overlay">
-            <div class="ms_box_overlay"></div>
-            <div class="ms_play_icon">
-                <img src="images/svg/play.svg" alt="">
+foreach (var c in vm.CatalogueSamplePack)
+{
+<div class="col-lg-2 col-md-6">
+    <div class="ms_rcnt_box marger_bottom30">
+        <div class="ms_rcnt_box_img">
+            <img src="@c.Image" alt="" class="img-fluid">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="ms_rcnt_box_text">
-        <h3><a href="#">@c.Title</a></h3>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">@c.Title</a></h3>
+        </div>
     </div>
 </div>}
 }
-            </div>
         </div>
     </div>
 </div>
+        
 
-           
-
-@code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-
-            await vm.SelectSamplePack();
-            StateHasChanged();
-        }
-    }
-
- }
+@code { protected override async Task OnAfterRenderAsync(bool firstRender) { if (firstRender) {  await vm.SelectSamplePack(); StateHasChanged(); } } }

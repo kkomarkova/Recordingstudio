@@ -14,489 +14,480 @@
                 </div>
             </div>
 
-
-            <div class="col-lg-4 col-md-12 padding_right40">
-
-                @if (vm.CatalogueItems == null)
+            @if (vm.CatalogueItems == null)
+            {
+<div>There is no catalogue added</div> }
+            else
+            {
+                foreach (var c in vm.CatalogueItems)
                 {
-                    <div>There is no catalogue added</div>
-                }
-                else
-                {
-                    foreach (var c in vm.CatalogueItems)
-                    {
-                        
-                    <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="@c.Image" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a @onclick="@(()=> vm.SelectTrack(@c.Id))" href="/SingleTrack">@c.Title</a></h3>
-                                
-                                <p></p>
-                            </div>
-                        </div>
+<div class="col-lg-4 col-md-12 padding_right40">
+    <div class="ms_weekly_box">
+        <div class="weekly_left">
+            <div class="w_top_song">
+                <div class="w_tp_song_img">
+                    <img src="@c.Image" alt="">
+                    <div class="ms_song_overlay">
                     </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">@c.Tracklength</span>
-                        <span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
+                    <div class="ms_play_icon">
+                        <img src="images/svg/play.svg" alt="">
                     </div>
+                </div>
+                <div class="w_tp_song_name">
+                    <h3><a @onclick="@(()=> vm.SelectTrack(@c.Id))" href="/SingleTrack">@c.Title</a></h3>
 
-                </div>
-                    }
-                }
-                <!--<div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song1.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Until I Met You</a></h3>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>-->
-
-
-
-                <!--<div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song2.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Walking Promises</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song3.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Gimme Some Courage</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song4.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Desired Games</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song5.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 padding_right40">
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song6.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Walking Promises</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song7.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Endless Things</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box ms_active_play">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song8.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <div class="ms_bars">
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Dream Your Moments</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song9.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Until I Met You</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song5.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Gimme Some Courage</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song2.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Dark Alley Acoustic</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song11.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">The Heartbeat Stops</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song12.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">One More Stranger</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song13.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Walking Promises</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>
-
-                </div>
-                <div class="ms_divider"></div>
-                <div class="ms_weekly_box">
-                    <div class="weekly_left">
-                        <div class="w_top_song">
-                            <div class="w_tp_song_img">
-                                <img src="images/weekly/song14.jpg" alt="">
-                                <div class="ms_song_overlay">
-                                </div>
-                                <div class="ms_play_icon">
-                                    <img src="images/svg/play.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="w_tp_song_name">
-                                <h3><a href="#">Endless Things</a></h3>
-                                <p>Ava Cornish</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weekly_right">
-                        <span class="w_song_time">5:10</span>-->
-                        @*<span class="ms_more_icon" data-other="1">
-                                <img src="images/svg/more.svg" alt="">
-                            </span>*@
-                        <!--<span class="w_song_dwnload">
-                            <i class="ms_icon1 dwnload_icon"></i>
-                        </span>
-                    </div>-->
-
+                    <p></p>
                 </div>
             </div>
         </div>
+        <div class="weekly_right">
+            <span class="w_song_time">@c.Tracklength</span>
+            <span class="w_song_dwnload">
+                <i class="ms_icon1 dwnload_icon"></i>
+            </span>
+        </div>
+
+    </div>
+</div>}
+            }
+        </div>
+    </div>
 </div>
+<!--<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song1.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Until I Met You</a></h3>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>-->
+<!--<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song2.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Walking Promises</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song3.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Gimme Some Courage</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song4.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Desired Games</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song5.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Dark Alley Acoustic</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+                <i class="ms_icon1 dwnload_icon"></i>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-12 padding_right40">
+    <div class="ms_weekly_box">
+        <div class="weekly_left">
+            <div class="w_top_song">
+                <div class="w_tp_song_img">
+                    <img src="images/weekly/song6.jpg" alt="">
+                    <div class="ms_song_overlay">
+                    </div>
+                    <div class="ms_play_icon">
+                        <img src="images/svg/play.svg" alt="">
+                    </div>
+                </div>
+                <div class="w_tp_song_name">
+                    <h3><a href="#">Walking Promises</a></h3>
+                    <p>Ava Cornish</p>
+                </div>
+            </div>
+        </div>
+        <div class="weekly_right">
+            <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song7.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Endless Things</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box ms_active_play">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song8.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <div class="ms_bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Dream Your Moments</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song9.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Until I Met You</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song5.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Gimme Some Courage</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+                <i class="ms_icon1 dwnload_icon"></i>
+            </span>
+        </div>
+
+    </div>
+</div>
+<div class="col-lg-4 col-md-12">
+    <div class="ms_weekly_box">
+        <div class="weekly_left">
+            <div class="w_top_song">
+                <div class="w_tp_song_img">
+                    <img src="images/weekly/song2.jpg" alt="">
+                    <div class="ms_song_overlay">
+                    </div>
+                    <div class="ms_play_icon">
+                        <img src="images/svg/play.svg" alt="">
+                    </div>
+                </div>
+                <div class="w_tp_song_name">
+                    <h3><a href="#">Dark Alley Acoustic</a></h3>
+                    <p>Ava Cornish</p>
+                </div>
+            </div>
+        </div>
+        <div class="weekly_right">
+            <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song11.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">The Heartbeat Stops</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song12.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">One More Stranger</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song13.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Walking Promises</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+            <i class="ms_icon1 dwnload_icon"></i>
+        </span>
+    </div>
+
+</div>
+<div class="ms_divider"></div>
+<div class="ms_weekly_box">
+    <div class="weekly_left">
+        <div class="w_top_song">
+            <div class="w_tp_song_img">
+                <img src="images/weekly/song14.jpg" alt="">
+                <div class="ms_song_overlay">
+                </div>
+                <div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
+                </div>
+            </div>
+            <div class="w_tp_song_name">
+                <h3><a href="#">Endless Things</a></h3>
+                <p>Ava Cornish</p>
+            </div>
+        </div>
+    </div>
+    <div class="weekly_right">
+        <span class="w_song_time">5:10</span>-->
+@*<span class="ms_more_icon" data-other="1">
+        <img src="images/svg/more.svg" alt="">
+    </span>*@
+<!--<span class="w_song_dwnload">
+        <i class="ms_icon1 dwnload_icon"></i>
+    </span>
+</div>-->
 <!--<!---Featured Artists Music--->
 <!--<div class="ms_featured_slider">
     <div class="ms_heading">
@@ -511,199 +502,199 @@
                         <img src="images/featured/song1.jpg" alt="">
                         <div class="ms_main_overlay">
                             <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Best Of Ava Cornish</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song2.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Best Of Ava Cornish</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song2.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Until I Met You</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song3.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Until I Met You</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song3.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Gimme Some Courage</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song4.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Gimme Some Courage</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song4.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Dark Alley Acoustic</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song5.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Dark Alley Acoustic</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song5.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Walking Promises</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song6.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Walking Promises</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song6.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Desired Games</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song1.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Desired Games</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song1.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Dream Your Moments (Duet)</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song2.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Dream Your Moments (Duet)</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song2.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Until I Met You</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song3.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Until I Met You</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song3.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            <!--<div class="ms_play_icon">
-                                <img src="images/svg/play.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms_rcnt_box_text">
-                        <h3><a href="#">Gimme Some Courage</a></h3>
-                        <p>Ava Cornish &amp; Brian Hill</p>
-                    </div>
+<!--<div class="ms_play_icon">
+                    <img src="images/svg/play.svg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="ms_rcnt_box">
-                    <div class="ms_rcnt_box_img">
-                        <img src="images/featured/song4.jpg" alt="">
-                        <div class="ms_main_overlay">
-                            <div class="ms_box_overlay"></div>-->
-                            @*<div class="ms_more_icon">
-                                    <img src="images/svg/more.svg" alt="">
-                                </div>*@
+        </div>
+        <div class="ms_rcnt_box_text">
+            <h3><a href="#">Gimme Some Courage</a></h3>
+            <p>Ava Cornish &amp; Brian Hill</p>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide">
+    <div class="ms_rcnt_box">
+        <div class="ms_rcnt_box_img">
+            <img src="images/featured/song4.jpg" alt="">
+            <div class="ms_main_overlay">
+                <div class="ms_box_overlay"></div>-->
+@*<div class="ms_more_icon">
+        <img src="images/svg/more.svg" alt="">
+    </div>*@
 
-                            @*<div class="ms_play_icon">
+@*<div class="ms_play_icon">
                                 <img src="images/svg/play.svg" alt="">
                             </div>
                         </div>
@@ -716,30 +707,25 @@
             </div>
         </div>
     </div>-->*@
-    <!-- Add Arrows -->
-    <!--<div class="swiper-button-next1 slider_nav_next"></div>
+<!-- Add Arrows -->
+<!--<div class="swiper-button-next1 slider_nav_next"></div>
     <div class="swiper-button-prev1 slider_nav_prev"></div>
 </div>-->
 
-@code {
+@code { // public List<CatalogueItem> CatalogueItems { get; set; }
 
-    // public List<CatalogueItem> CatalogueItems { get; set; }
-
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    CatalogueItems = await Http.GetFromJsonAsync<List<CatalogueItem>>("api/catalogue");
-    //}
+            //protected override async Task OnInitializedAsync()
+            //{
+            //    CatalogueItems = await Http.GetFromJsonAsync<List<CatalogueItem>>("api/catalogue");
+            //}
 
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            
-            await vm.PopulateCatalogue();
-            StateHasChanged();
-        }
-    }
+            protected override async Task OnAfterRenderAsync(bool firstRender)
+            {
+                if (firstRender)
+                {
 
-    
-}
+                    await vm.PopulateCatalogue();
+                    StateHasChanged();
+                }
+            } }
