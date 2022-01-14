@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HQrecordingstudioBlazor.Sha
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HqrecordingDB", "HqrecordingDB\HqrecordingDB.sqlproj", "{3579CFE0-86C3-4243-924E-B49AF9EDFF56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HqrecordingstudioTest", "HqrecordingstudioTest\HqrecordingstudioTest.csproj", "{9A36A080-5002-4DE7-AB65-330F6A3C551D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HqrecordingstudioTest", "HqrecordingstudioTest\HqrecordingstudioTest.csproj", "{9A36A080-5002-4DE7-AB65-330F6A3C551D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

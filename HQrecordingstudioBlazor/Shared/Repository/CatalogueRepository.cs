@@ -59,5 +59,36 @@ namespace HQrecordingstudioBlazor.Shared.Repository
             return catalogueItem;
            
         }
+
+        
+
+        //public async Task<CatalogueItem> Catalogue_GetSamplePack(int ParentId)
+        //{
+        //    CatalogueItem catalogueSamplePack = new CatalogueItem();
+        //    using (var connection = _context.CreateConnection())
+        //    {
+
+        //        const string query = "spCatalogue_GetSamplePack";
+        //        var p = new DynamicParameters();
+        //        p.Add(name: "@ParentId", ParentId, DbType.Int32, ParameterDirection.Input);
+
+        //        if (connection.State == ConnectionState.Closed)
+        //            connection.Open();
+        //        try
+        //        {
+        //            catalogueSamplePack = await connection.QueryFirstOrDefaultAsync<CatalogueItem>(query, new { ParentId }, commandType: CommandType.StoredProcedure);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //        finally
+        //        {
+        //            if (connection.State == ConnectionState.Open)
+        //                connection.Close();
+        //        }
+        //    }
+        //    return catalogueSamplePack;
+        //}
     }
 }

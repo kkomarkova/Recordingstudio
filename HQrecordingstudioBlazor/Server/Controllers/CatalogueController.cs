@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HQrecordingstudioBlazor.Server.Controllers
 {
-   [AllowAnonymous]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class CatalogueController : ControllerBase
@@ -23,7 +23,7 @@ namespace HQrecordingstudioBlazor.Server.Controllers
         {
             try
             {
-                var catalogueItems= await _catalogueRepo.GetCatalogue();
+                var catalogueItems = await _catalogueRepo.GetCatalogue();
                 return Ok(catalogueItems);
             }
             catch (Exception ex)
@@ -44,5 +44,7 @@ namespace HQrecordingstudioBlazor.Server.Controllers
 
             return Ok(catalogueItem);
         }
+
     }
 }
+    

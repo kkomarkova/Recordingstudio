@@ -112,6 +112,8 @@ namespace HQrecordingstudioBlazor.Server
 
             // Register the Catalogue ServiceS
             services.AddScoped<ICatalogueRepository, CatalogueRepository>();
+            // Register the Collection ServiceS
+            services.AddScoped<ICollectionRepository, CollectionRepository>();
 
             //Getting the Dbconnection from DapperContext
             services.AddSingleton<DapperContext>();

@@ -63,3 +63,31 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+.ms_btn {
+    background-color: #3bc8e7;
+    color: #fff;
+    height: 30px;
+    display: inline-block;
+    text-transform: capitalize;
+    width: 100px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 20px;
+    margin-left: 15px;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+    .ms_btn.login_btn:after {
+        position: absolute;
+        content: "\f007";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        font: normal normal normal 14px/1 FontAwesome;
+    }

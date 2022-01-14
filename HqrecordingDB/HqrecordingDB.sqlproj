@@ -68,6 +68,7 @@
     <Build Include="dbo\Tables\Favourite.sql" />
     <Build Include="dbo\Tables\Purchased.sql" />
     <Build Include="dbo\Tables\Pack.sql" />
+    <Build Include="dbo\Stored Procedures\spCatalogue_GetSamplePack.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Stored Procedures\spCatalogue_GetAll.sql" />
