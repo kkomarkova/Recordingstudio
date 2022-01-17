@@ -31,30 +31,34 @@
 <!---Header--->
 <div class="ms_header">
     <div class="ms_top_left">
-        <div class="ms_top_search">
-            <input type="text" class="form-control" placeholder="Search Music Here..">
-            <span class="search_icon">
-                <img src="images/svg/search.svg" alt="">
-            </span>
-        </div>
+        @*<div class="ms_top_search">
+                <input type="text" class="form-control" placeholder="Search Music Here..">
+                <span class="search_icon">
+                    <img src="images/svg/search.svg" alt="">
+                </span>
+            </div>*@
         <div class="ms_top_trend">
-            <span><a href="#" class="ms_color">Trending Songs :</a></span> <span class="top_marquee"><a href="#">Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley (+8 More)</a></span>
+            <span class="top_marquee"><a href="#">In collaboration with  </a></span><span><a href="https://www.hqrecordingstudio.co.uk/" class="ms_color">HQ Recording Studio </a></span>
         </div>
     </div>
     <div class="ms_top_right">
-        <div class="ms_top_lang">
-            <span><a href="/purchase"><img src="images/svg/shopping-cart.svg"></a></span>
-            <span><a href="/favourite"><img src="images/svg/heart.svg"></a></span>
-        </div>
+        <AuthorizeView>
+            <Authorized>
+                <div class="ms_top_lang">
+                    <span><a href="/purchase"><img src="images/svg/shopping-cart.svg"></a></span>
+                    <span><a href="/favourite"><img src="images/svg/heart.svg"></a></span>
+                </div>
+            </Authorized>
+        </AuthorizeView>
         <div class="ms_top_btn">
             @*<a href="javascript:;" class="ms_btn reg_btn" data-toggle="modal" data-target="#myModal"><span>register</span></a>
-        <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>*@
+                <a href="javascript:;" class="ms_btn login_btn" data-toggle="modal" data-target="#myModal1"><span>login</span></a>*@
             @*<a class="ms_btn reg_btn">
-                <NavLink class="nav-link" href="counter">
-                    <span class="oi oi-plus" aria-hidden="true"></span> Counter
-                </NavLink>
-            </a>*@
-            <LoginDisplay/>
+                    <NavLink class="nav-link" href="counter">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Counter
+                    </NavLink>
+                </a>*@
+            <LoginDisplay />
         </div>
     </div>
 </div>
