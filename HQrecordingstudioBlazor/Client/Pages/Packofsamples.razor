@@ -1,78 +1,100 @@
-﻿@page "/packofsamples"
+﻿@page "/samplepacksingle"
+@using HQrecordingstudioBlazor.Shared.Models;
+@using Newtonsoft.Json
+@using Client.ViewModel
+@inject CatalogueViewModel vm
+@inject NavigationManager NavigationManager
 
-    <div class="ms_album_single_wrapper ms_artist_single">
-        <div class="album_single_data">
-            <div class="album_single_img">
-                <img src="images/featured/song1.jpg" alt="" class="img-fluid">
+@{ if (vm.SelectedItem != null)
+    {
+<div class="ms_album_single_wrapper ms_artist_single">
+    <div class="album_single_data">
+        <div class="album_single_img">
+            <img src="@vm.SelectedItem.Image" alt="" class="img-fluid">
+        </div>
+        <div class="album_single_text">
+            <h2>@vm.SelectedItem.Title</h2>
+            <p class="singer_name">Category</p>
+            <div class="about_artist">
+                @vm.SelectedItem.Description
             </div>
-            <div class="album_single_text">
-                <h2>Pack of Sample name</h2>
-                <p class="singer_name">Category</p>
-                <div class="about_artist">
-                    Song descriptions are key to connecting with listeners and getting featured in blogs and the press.
-                    A song description by the artist is not meant to be a review of the song, nor a rehash of the lyrics, nor what the listener can hear for herself.
-                </div>
-                <div class="album_btn">
-                    <a href="#" class="ms_btn_normal"><img src="images/svg/plus-blue.svg" alt=""> Add to the card</a>
-                    <a href="#" class="ms_btn" style="margin-left:15px"><img src="images/svg/shopping-cart.svg" alt="">Buy now</a>
-                </div>
+            <div class="album_btn">
+                <a href="#" class="ms_btn">Add to the card</a>
+                <a href="#" class="ms_btn" style="margin-left:15px"><img src="images/svg/shopping-cart.svg" alt="">Buy now</a>
             </div>
         </div>
     </div>
-    <!----Song List---->
-    <div class="album_inner_list" style="margin-left:140px">
-        <div class="album_list_wrapper">
-            <ul class="album_list_name">
-                <li>#</li>
-                <li>Song Title</li>
-                <li>Artist</li>
-                <li class="text-center">Duration</li>
-                <li class="text-center">Add To Favourites</li>
-            </ul>
-            <ul>
-                <li><a href="#"><span class="play_no">01</span><span class="play_hover"></span></a></li>
-                <li><a href="#">Bloodlust</a></li>
-                <li><a href="#">Ava Cornish & Brian Hill</a></li>
-                <li class="text-center"><a href="#">5:26</a></li>
-                <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-              
-            </ul>
-            <ul>
-                <li><a href="#"><span class="play_no">02</span><span class="play_hover"></span></a></li>
-                <li><a href="#">Desired Games</a></li>
-                <li><a href="#">Ava Cornish & Brian Hill</a></li>
-                <li class="text-center"><a href="#">5:26</a></li>
-                <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-                
-            </ul>
-            <ul>
-                <li><a href="#"><span class="play_no">03</span><span class="play_hover"></span></a></li>
-                <li><a href="#">Until I Met You</a></li>
-                <li><a href="#">Ava Cornish & Brian Hill</a></li>
-                <li class="text-center"><a href="#">5:26</a></li>
-                <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-                
-            </ul>
-            <ul class="play_active_song">
-                <li><a href="#"><span class="play_no">04</span><span class="play_hover"></span></a></li>
-                <li><a href="#">Dark Alley Acoustic</a></li>
-                <li><a href="#">Ava Cornish & Brian Hill</a></li>
-                <li class="text-center"><a href="#">5:26</a></li>
-                <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-               
-            </ul>
-            <ul>
-                <li><a href="#"><span class="play_no">05</span><span class="play_hover"></span></a></li>
-                <li><a href="#">Cloud nine</a></li>
-                <li><a href="#">Ava Cornish & Brian Hill</a></li>
-                <li class="text-center"><a href="#">5:26</a></li>
-                <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
-              
-            </ul>
-        </div>
+</div> }
+else
+{
+<p>Detail view of selected sample pack loading...</p> } }
+
+<!----Song List---->
+<div class="album_inner_list" style="margin-left:140px">
+    <div class="album_list_wrapper">
+        <ul class="album_list_name">
+            <li>#</li>
+            <li>Song Title</li>
+            <li>Artist</li>
+            <li class="text-center">Duration</li>
+            <li class="text-center">Add To Favourites</li>
+        </ul>
+        <ul>
+            <li><a href="#"><span class="play_no">01</span><span class="play_hover"></span></a></li>
+            <li><a href="#">Bloodlust</a></li>
+            <li><a href="#">Ava Cornish & Brian Hill</a></li>
+            <li class="text-center"><a href="#">5:26</a></li>
+            <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+
+        </ul>
+        <ul>
+            <li><a href="#"><span class="play_no">02</span><span class="play_hover"></span></a></li>
+            <li><a href="#">Desired Games</a></li>
+            <li><a href="#">Ava Cornish & Brian Hill</a></li>
+            <li class="text-center"><a href="#">5:26</a></li>
+            <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+
+        </ul>
+        <ul>
+            <li><a href="#"><span class="play_no">03</span><span class="play_hover"></span></a></li>
+            <li><a href="#">Until I Met You</a></li>
+            <li><a href="#">Ava Cornish & Brian Hill</a></li>
+            <li class="text-center"><a href="#">5:26</a></li>
+            <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+
+        </ul>
+        <ul class="play_active_song">
+            <li><a href="#"><span class="play_no">04</span><span class="play_hover"></span></a></li>
+            <li><a href="#">Dark Alley Acoustic</a></li>
+            <li><a href="#">Ava Cornish & Brian Hill</a></li>
+            <li class="text-center"><a href="#">5:26</a></li>
+            <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+
+        </ul>
+        <ul>
+            <li><a href="#"><span class="play_no">05</span><span class="play_hover"></span></a></li>
+            <li><a href="#">Cloud nine</a></li>
+            <li><a href="#">Ava Cornish & Brian Hill</a></li>
+            <li class="text-center"><a href="#">5:26</a></li>
+            <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+
+        </ul>
     </div>
-    
+</div>
 
-    @code {
 
+@code { 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            vm.StateHasChangedDelegate = UpdateUI;
+            var test = vm;
+            StateHasChanged();
+        }
     }
+
+    public void UpdateUI()
+    {
+        StateHasChanged();
+    }}
