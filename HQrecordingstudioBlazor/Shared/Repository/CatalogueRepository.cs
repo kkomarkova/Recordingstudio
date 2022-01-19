@@ -21,7 +21,7 @@ namespace HQrecordingstudioBlazor.Shared.Repository
 
         public async Task<List<CatalogueItem>> GetCatalogue()
         {
-            var query = "select * from Catalogue WHERE ParentId IS NOT NULL";
+            var query = "select * from Catalogue WHERE ParentId = 1";
             using (var connection = _context.CreateConnection())
             {
                 return (await connection.QueryAsync<CatalogueItem>(query)).ToList();
@@ -44,6 +44,7 @@ namespace HQrecordingstudioBlazor.Shared.Repository
                     connection.Open();
                 try
                 {
+                    //Get rid of new Id change it to p 
                     catalogueItem = await connection.QueryFirstOrDefaultAsync<CatalogueItem>(query, new { Id }, commandType: CommandType.StoredProcedure);
                 }
                 catch (Exception ex)

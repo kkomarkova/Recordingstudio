@@ -32,7 +32,7 @@ foreach (var c in vm.CatalogueSamplePack)
             </div>
         </div>
         <div class="ms_rcnt_box_text">
-            <h3><a @onclick="@(()=> vm.SelectTrack(@c.Id))" href="/samplepacksingle">@c.Title</a></h3>
+            <h3><a @onclick="@(()=> vm.SelectPack(@c.Id))" href="/samplepacksingle">@c.Title</a></h3>
         </div>
     </div>
 </div>}
@@ -42,4 +42,11 @@ foreach (var c in vm.CatalogueSamplePack)
 </div>
         
 
-@code { protected override async Task OnAfterRenderAsync(bool firstRender) { if (firstRender) {  await vm.SelectSamplePack(); StateHasChanged(); } } }
+@code { protected override async Task OnAfterRenderAsync(bool firstRender) 
+    { 
+        if (firstRender) 
+        {  await vm.SelectSamplePack(); 
+            StateHasChanged(); 
+        } 
+    } 
+    }

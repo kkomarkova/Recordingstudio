@@ -14,7 +14,9 @@ namespace HQrecordingstudioBlazor.Client.ViewModel
     {
         public Action StateHasChangedDelegate { get; set; }
         public List<CatalogueItem> CatalogueItems { get; set; }
+        public List<CatalogueItem> PackItems { get; set; }
         public CatalogueItem SelectedItem { get; set; }
+        public CatalogueItem SelectedPack { get; set; }
         public List<SamplePack> CatalogueSamplePack { get; set; }
 
         public readonly HttpClient _http;
@@ -27,12 +29,13 @@ namespace HQrecordingstudioBlazor.Client.ViewModel
             _http = _httpClientFactory.CreateClient("HQrecordingstudioBlazor.Public");
         }
 
+        //All tracks
         public async Task PopulateCatalogue()
         {
 
             try
             {
-                CatalogueItems = await _http.GetFromJsonAsync<List<HQrecordingstudioBlazor.Shared.Models.CatalogueItem>>("api/catalogue");
+                CatalogueItems = await _http.GetFromJsonAsync<List<CatalogueItem>>("api/catalogue");
             }
             catch (Exception ex)
             {
@@ -46,7 +49,7 @@ namespace HQrecordingstudioBlazor.Client.ViewModel
 
             try
             {
-                SelectedItem = await _http.GetFromJsonAsync<HQrecordingstudioBlazor.Shared.Models.CatalogueItem>($"api/catalogue/{Id}");
+                SelectedItem = await _http.GetFromJsonAsync<CatalogueItem>($"api/catalogue/{Id}");
                 StateHasChangedDelegate.Invoke();
             }
             catch (Exception ex)
@@ -55,12 +58,45 @@ namespace HQrecordingstudioBlazor.Client.ViewModel
             }
 
         }
+
+        //Load all samplepack
         public async Task SelectSamplePack()
         {
 
             try
             {
-                CatalogueSamplePack = await _http.GetFromJsonAsync<List<HQrecordingstudioBlazor.Shared.Models.SamplePack>>($"api/collection");
+                CatalogueSamplePack = await _http.GetFromJsonAsync<List<SamplePack>>($"api/collection");
+                StateHasChangedDelegate.Invoke();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+        public async Task SelectPack(int Id)
+        {
+
+            try
+            {
+                SelectedPack = await _http.GetFromJsonAsync<CatalogueItem>($"api/catalogue/{Id}");
+                await GetTracks(Id);
+                StateHasChangedDelegate.Invoke();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+        //Get tracks belonging to the pack
+        public async Task GetTracks(int PackId)
+        {
+
+            try
+            {
+                PackItems = await _http.GetFromJsonAsync<List<CatalogueItem>>($"api/pack/{PackId}");
                 StateHasChangedDelegate.Invoke();
             }
             catch (Exception ex)

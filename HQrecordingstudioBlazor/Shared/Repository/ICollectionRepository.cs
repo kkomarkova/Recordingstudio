@@ -10,5 +10,6 @@ namespace HQrecordingstudioBlazor.Shared.Repository
     public interface ICollectionRepository
     {
         public Task<List<SamplePack>> Catalogue_GetSamplePack();
+        public Task<List<SamplePack>> Catalogue_GetPackItems(int PackId);
     }
 }

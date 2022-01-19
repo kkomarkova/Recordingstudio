@@ -5,32 +5,66 @@
 @inject CatalogueViewModel vm
 @inject NavigationManager NavigationManager
 
-@{ if (vm.SelectedItem != null)
+@{ if (vm.SelectedPack != null)
     {
-<div class="ms_album_single_wrapper ms_artist_single">
-    <div class="album_single_data">
-        <div class="album_single_img">
-            <img src="@vm.SelectedItem.Image" alt="" class="img-fluid">
-        </div>
-        <div class="album_single_text">
-            <h2>@vm.SelectedItem.Title</h2>
-            <p class="singer_name">Category</p>
-            <div class="about_artist">
-                @vm.SelectedItem.Description
+        <div class="ms_album_single_wrapper ms_artist_single">
+            <div class="album_single_data">
+                <div class="album_single_img">
+                    <img src="@vm.SelectedPack.Image" alt="" class="img-fluid">
+                </div>
+                <div class="album_single_text">
+                    <h2>@vm.SelectedPack.Title</h2>
+                    <p class="singer_name">Category</p>
+                    <div class="about_artist">
+                        @vm.SelectedPack.Description
+                    </div>
+                    <div class="album_btn">
+                        <a href="#" class="ms_btn">Add to the card</a>
+                        <a href="#" class="ms_btn" style="margin-left:15px"><img src="images/svg/shopping-cart.svg" alt="">Buy now</a>
+                    </div>
+                </div>
             </div>
-            <div class="album_btn">
-                <a href="#" class="ms_btn">Add to the card</a>
-                <a href="#" class="ms_btn" style="margin-left:15px"><img src="images/svg/shopping-cart.svg" alt="">Buy now</a>
+        </div>
+        <div class="album_inner_list" style="margin-left:140px">
+            <div class="album_list_wrapper">
+                <ul class="album_list_name">
+                    <li>Song Title</li>
+                    <li>Artist</li>
+                    <li class="text-center">Duration</li>
+                    <li class="text-center">Add To Favourites</li>
+                </ul>
             </div>
         </div>
-    </div>
-</div> }
-else
-{
-<p>Detail view of selected sample pack loading...</p> } }
 
-<!----Song List---->
-<div class="album_inner_list" style="margin-left:140px">
+        foreach (var item in vm.PackItems)
+        {
+
+            <div class="album_inner_list" style="margin-left:140px">
+                <div class="album_list_wrapper">
+                   
+                        <ul>
+                            <li><a href="#">@item.Title</a></li>
+                            <li><a href="#">@item.ArtistId</a></li>
+                            <li class="text-center"><a href="#">@item.Tracklength</a></li>
+                            <li class="text-center"><a href="#"><span class="ms_icon1 ms_fav_icon"></span></a></li>
+
+                        </ul>
+                   
+                </div>
+            </div>
+
+
+        }
+
+    }
+    else
+    {
+        <p>Detail view of selected sample pack loading...</p> } }
+                        
+
+
+<!---- Track list---->
+<!--<div class="album_inner_list" style="margin-left:140px">
     <div class="album_list_wrapper">
         <ul class="album_list_name">
             <li>#</li>
@@ -80,10 +114,10 @@ else
 
         </ul>
     </div>
-</div>
+</div>-->
 
 
-@code { 
+@code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
